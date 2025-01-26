@@ -18,14 +18,10 @@ export class Bush extends GameObject {
 
     this.name = `Bush-(${coords.x},${coords.z})`;
 
-    loader.load(`models/bush1.glb`, (bushModel) => {
-      const variation = new THREE.Vector3(0, 0.1, 0);
+    loader.load(`models/stylized_bush.glb`, (bushModel) => {
+      const variation = new THREE.Vector3(0, -1, 0);
       this.mesh.add(bushModel.scene.children[0]);
-      this.mesh.scale.set(
-        1.0 + 2.0 * variation.x * (Math.random() - 0.5),
-        1.0 + 2.0 * variation.y * (Math.random() - 0.5),
-        1.0 + 2.0 * variation.z * (Math.random() - 0.5)
-      );
+      this.mesh.scale.set(0.5, 0.5, 0.5);
       this.mesh.rotation.set(
         0,
         Math.random() * 2 * Math.PI,

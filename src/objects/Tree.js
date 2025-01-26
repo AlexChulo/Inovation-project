@@ -18,13 +18,13 @@ export class Tree extends GameObject {
 
     this.name = `Tree-(${coords.x},${coords.z})`;
 
-    loader.load(`models/tree1.glb`, (treeModel) => {
+    loader.load(`models/stylized_tree.glb`, (treeModel) => {
       const variation = new THREE.Vector3(0, 0.2, 0);
       this.mesh.add(treeModel.scene.children[0]);
       this.mesh.scale.set(
-        1.0 + 2.0 * variation.x * (Math.random() - 0.5),
-        1.0 + 2.0 * variation.y * (Math.random() - 0.5),
-        1.0 + 2.0 * variation.z * (Math.random() - 0.5)
+      2.0 + 4.0 * variation.x * (Math.random() - 0.5),
+      2.0 + 4.0 * variation.y * (Math.random() - 0.5),
+      2.0 + 4.0 * variation.z * (Math.random() - 0.5)
       );
       this.mesh.rotation.set(
         0,
